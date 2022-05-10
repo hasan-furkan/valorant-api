@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Ability from "./components/Ability";
+import Weapon from "./components/Weapons";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -12,7 +12,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="ability" element={<Ability />} />
+        <Route path="weapon" element={<Weapon />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -22,7 +22,7 @@ const Card = () => {
             {title}
         </h1>
         <nav>
-        <Link to="/ability">Weapons</Link>
+        <Link to="/weapon">Weapons</Link>
 
         </nav>
         </div>
@@ -38,6 +38,7 @@ const Card = () => {
            <div className="cardDesc">
                {character.description}
            </div>
+           
        </div>
        })}
        </div>
