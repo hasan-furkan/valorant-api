@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import  './card.css';
 import axios from 'axios';
-import { Link } from "react-router-dom";
 
 const Card = () => {
     const [characters, setcharacters] = useState([])
@@ -14,34 +12,24 @@ const Card = () => {
     }, [])
     
     
-    const title = "Valorant Oyun İçi Bilgiler"
   return (
-    <div className='cardComponent'>
-        <div className='header'>
-        <h1 className="header-title">
-            {title}
-        </h1>
-        <nav>
-        <Link to="/weapon">Weapons</Link>
+    <div className='flex flex-wrap m-4'>
+      {characters.map((character,index)=>{
+        return(
+          <div className="max-w-sm rounded overflow-hidden shadow-lg m-4"><img src={character.displayIconSmall} alt="" width="150px" />
+          <div className="px-6 py-4 ">
 
-        </nav>
-        </div>
-       <div className="cardFlex">
-       {characters.map((character, index) => {
-           return  <div key={index} className="cardDesign">
-           <div className="cardImage">
-               <img src={character.displayIcon} alt="" />
-           </div>
-           <div className="cardTitle">
-               {character.displayName}
-           </div>
-           <div className="cardDesc">
-               {character.description}
-           </div>
-           
-       </div>
-       })}
-       </div>
+            <div className="font-bold text-xl mb-2">
+              {character.displayName}
+            </div>
+            <p className="text-gray-700 text-base">
+              {character.description}
+            </p>
+          </div>
+          
+          </div>
+        )
+      })}
     </div>
   )
 }

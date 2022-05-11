@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./card.css";
 
 const Ability = () => {
   const [weapons, setWeapons] = useState([]);
