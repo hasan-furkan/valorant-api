@@ -1,14 +1,12 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
 import WeaponsComponent from "../components/weaponsComponent";
+import {weaponsService} from "../services/api";
 
 export const Weapons = () => {
     const [weapons, setWeapons] = useState([]);
     useEffect(() => {
-        axios
-            .get(
-                "https://valorant-api.com/v1/weapons?language=tr-TR&isPlayableCharacter=true"
-            )
+        weaponsService()
             .then((res) => {
                 setWeapons(res.data.data);
             });

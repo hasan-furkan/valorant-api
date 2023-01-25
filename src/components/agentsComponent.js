@@ -1,6 +1,12 @@
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
-const CardComponent = ({characters}) => {
+const AgentsComponent = ({characters}) => {
+
+    const navigate = useNavigate()
+
+    const handleClick = (characterUuid) => {
+        navigate(`/agents/${characterUuid}`)
+    }
 
   return (
       <>
@@ -14,8 +20,10 @@ const CardComponent = ({characters}) => {
                               <Link to="/">{character.description}</Link>
                           </h2>
                           <button
-                              className="px-5 py-1 border-2 hover:border-blue-600 transition border-gray-200 ">Read
-                              More
+                              className="px-5 py-1 border-2 hover:border-blue-600 transition border-gray-200"
+                              onClick={() => handleClick(character.uuid)}
+                          >
+                              Daha Fazla
                           </button>
                       </figure>
                       <figcaption className="w-full md:w-1/3 order-first md:order-last">
@@ -30,4 +38,4 @@ const CardComponent = ({characters}) => {
   )
 }
 
-export default CardComponent
+export default AgentsComponent
