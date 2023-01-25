@@ -1,4 +1,5 @@
 import {Link, useNavigate} from "react-router-dom"
+import {Loader} from "./loader";
 
 const AgentsComponent = ({characters}) => {
 
@@ -10,7 +11,7 @@ const AgentsComponent = ({characters}) => {
 
   return (
       <>
-          {characters.map((character, index) => {
+          {characters ? characters.map((character, index) => {
               return (
                   <article key={index}
                            className="flex flex-col md:flex-row items-center  group relative p-6  bg-gray-100 dark:bg-slate-800 rounded-2xl after:absolute after:w-[2px] after:h-10 after:bg-blue-600 after:top-[50%] after:left-0 after:-translate-y-[50%] ">
@@ -32,7 +33,7 @@ const AgentsComponent = ({characters}) => {
                       </figcaption>
                   </article>
               )
-          })}
+          }): <Loader />}
       </>
 
   )
