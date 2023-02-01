@@ -14,11 +14,11 @@ const AgentsComponent = ({characters}) => {
           {characters ? characters.map((character, index) => {
               return (
                   <article key={index}
-                           className="flex flex-col md:flex-row items-center  group relative p-6  bg-gray-100 dark:bg-slate-800 rounded-2xl after:absolute after:w-[2px] after:h-10 after:bg-blue-600 after:top-[50%] after:left-0 after:-translate-y-[50%] ">
-                      <figure className="w-full space-y-4">
+                           className="flex flex-col md:flex-row items-center group relative p-6 bg-gray-100 dark:bg-slate-800 rounded-2xl after:absolute after:w-[2px] after:h-10 after:bg-blue-600 after:top-[50%] after:left-0 after:-translate-y-[50%]">
+                      <figure className="w-full space-y-4 hover:space-y-7">
                           <h1 className="text-lg font-bold tracking-tight sm:text-2xl">{character.displayName}</h1>
                           <h2 className="text-lg font-bold tracking-tight sm:text-1xl">
-                              <Link to="/">{character.description}</Link>
+                              <Link to={`/agents/${character.uuid}`}>{character.description}</Link>
                           </h2>
                           <button
                               className="px-5 py-1 border-2 hover:border-blue-600 transition border-gray-200"
@@ -29,7 +29,7 @@ const AgentsComponent = ({characters}) => {
                       </figure>
                       <figcaption className="w-full md:w-1/5 order-first md:order-last">
                           <img src={character.displayIconSmall} alt="blog"
-                               className="object-cover object-center rounded-md w-44 justify-end" />
+                               className="object-cover object-center rounded-md w-44" />
                       </figcaption>
                   </article>
               )
