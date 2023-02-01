@@ -15,7 +15,7 @@ export const Agents = () => {
         })
     }, [])
     return (
-        <div className="px-4 py-0 md:py-16 space-y-4 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 ">
+        <div className="px-8 py-0 md:py-16 space-y-4 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 ">
             <div className="grid gap-4 ">
                 {!loading ? <AgentsComponent characters={characters} /> : <Loader/>}
             </div>

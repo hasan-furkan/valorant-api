@@ -27,9 +27,9 @@ const AgentsComponent = ({characters}) => {
                               Daha Fazla
                           </button>
                       </figure>
-                      <figcaption className="w-full md:w-1/3 order-first md:order-last">
+                      <figcaption className="w-full md:w-1/5 order-first md:order-last">
                           <img src={character.displayIconSmall} alt="blog"
-                               className="w-full h-48 object-cover object-center rounded-md w-full h-auto" />
+                               className="object-cover object-center rounded-md w-44 justify-end" />
                       </figcaption>
                   </article>
               )
