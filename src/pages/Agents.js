@@ -10,11 +10,9 @@ export const Agents = () => {
 
     useEffect(()=> {
         agentsService().then((res) => {
-            console.log(res)
             setCharacters(res.data.data)
             setLoading(false)
         })
-
     }, [])
     return (
         <div className="px-4 py-0 md:py-16 space-y-4 bg-white dark:bg-slate-900 text-gray-900 dark:text-gray-100 ">
